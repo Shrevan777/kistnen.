@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Use MCQ Quiz</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .question {
+            font-weight: bold;
+            margin: 20px 0 10px;
+        }
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+        .options li {
+            margin: 10px 0;
+        }
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Land Use MCQ Quiz</h1>
+
+    <div class="quiz-container">
+        <form id="quizForm">
+            <!-- Question 1 -->
+            <div class="question">
+                1. The land used in an area where crops are grown is known as:
+            </div>
+            <ul class="options">
+                <li><input type="radio" name="q1" value="a"> a. Industrial land use</li>
+                <li><input type="radio" name="q1" value="b"> b. Agricultural land use</li>
+                <li><input type="radio" name="q1" value="c"> c. Residential pollution</li>
+                <li><input type="radio" name="q1" value="d"> d. Recreational land use</li>
+            </ul>
+
+            <!-- Question 2 -->
+            <div class="question">
+                2. The land use in an area where tourist hotels have been built is known as:
+            </div>
+            <ul class="options">
+                <li><input type="radio" name="q2" value="a"> a. Recreational land use</li>
+                <li><input type="radio" name="q2" value="b"> b. Residential land use</li>
+                <li><input type="radio" name="q2" value="c"> c. Agricultural land use</li>
+                <li><input type="radio" name="q2" value="d"> d. Industrial land use</li>
+            </ul>
+
+            <!-- Question 3 -->
+            <div class="question">
+                3. The development of the road network is known as:
+            </div>
+            <ul class="options">
+                <li><input type="radio" name="q3" value="a"> a. Agricultural land use</li>
+                <li><input type="radio" name="q3" value="b"> b. Industrial land use</li>
+                <li><input type="radio" name="q3" value="c"> c. Infrastructural land use</li>
+                <li><input type="radio" name="q3" value="d"> d. Recreational land use</li>
+            </ul>
+
+            <!-- Question 4 -->
+            <div class="question">
+                4. A plot of land which is neglected and abandoned by its owner is known as:
+            </div>
+            <ul class="options">
+                <li><input type="radio" name="q4" value="a"> a. Dumping ground</li>
+                <li><input type="radio" name="q4" value="b"> b. Wasteland</li>
+                <li><input type="radio" name="q4" value="c"> c. Residential land</li>
+                <li><input type="radio" name="q4" value="d"> d. Commercial land</li>
+            </ul>
+
+            <!-- Question 5 -->
+            <div class="question">
+                5. A wasteland is a/an:
+            </div>
+            <ul class="options">
+                <li><input type="radio" name="q5" value="a"> a. Eyesore to the environment</li>
+                <li><input type="radio" name="q5" value="b"> b. Pleasant piece of land to the eyes</li>
+                <li><input type="radio" name="q5" value="c"> c. Must in the environment</li>
+                <li><input type="radio" name="q5" value="d"> d. Piece of land which attracts tourists</li>
+            </ul>
+
+            <button type="submit" class="submit-btn">Submit Quiz</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("quizForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Answers array
+            const correctAnswers = ['b', 'a', 'c', 'b', 'a'];
+
+            let score = 0;
+            for (let i = 1; i <= 5; i++) {
+                const answer = document.querySelector(`input[name="q${i}"]:checked`);
+                if (answer && answer.value === correctAnswers[i - 1]) {
+                    score++;
+                }
+            }
+
+            alert(`Your score is ${score} out of 5.`);
+        });
+    </script>
+</body>
+</html>
